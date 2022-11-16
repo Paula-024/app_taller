@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Paula Castellanos">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>index</title>
+  <!-- BOOSTRAP CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!--menu-->
+
+  <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="logo" href="/">
+          <img src="./img/logo2 (1).png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#ubicacionModal">ubicacion cel</a>
+            <a class="nav-link logged-out" href="https://adenunciar.policia.gov.co/Adenunciar/Login.aspx?ReturnUrl=%2fadenunciar%2f" data-bs-toggle="modal" data-bs-target="#denunciaModal">denunciar</a>
+            <a class="nav-link logged-in" href="./index.html" id="logout">Logout</a>
+          </div>
+        </div>
+      </div>
+  </nav>
+
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+        </ul>
+      </div>
+      </div>
+  </div>
+  <!--espacio para apps-->
+
+  <div class="espacio-apps">
+    <div class="icon" >
+      <img src="./img/334797_viber_application_calls_free_phone_icon.png" class="apps img-thumbnail img-fluid" alt="contantos">
+      <h4>contactos</h4>
+    </div>
+
+    <div class="icon">
+      <img src="./img/4975304_contact_email_gmail_inbox_mail_icon.png" class="apps img-thumbnail img-fluid" alt="email">
+      <h4>email</h4>
+    </div>
+
+    <div class="icon">
+      <img src="./img/nequi-logo-58FBE82BA6-seeklogo.com.png" class="apps img-thumbnail img-fluid" alt="nequi">
+      <h4>nequi</h4>
+    </div>
+
+  
+
+    <div class="icon">
+      <img src="./img/logo-nuevo-02.png" class="apps img-thumbnail img-fluid" alt="daviplata">
+      <h4>daviplata</h4>
+    </div> 
+
+    <div class="icon">
+      <a href="aplicaciones.html"><img src="./img/352003_add_icon.png" class="apps img-thumbnail" alt="agregara"></a>
+      <h4>agregar</h4>
+    </div>
+
+    
+
+  </div>
+
+  <!-- Modal ubicacion -->
+
+    
+
+  <div class="modal fade" id="ubicacionModal" tabindex="-1" ria-labelledby="datosModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="datosModalLabel">Ubica tu celular</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-map">
+              <div class="map-canvas">
+                <iframe class="gmap_iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d63628.04251929511!2d-74.16200513853344!3d4.638156333522128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1668477397839!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              
+          </div>
+          <div class="modal-footer">
+
+            <div id="area-nav">
+                
+              <button class="btn btn-secondary" id="pedirvan">conseguir ubicacion</button>
+              
+              <div id="nlat"></div>
+              <div id="nlon"></div>
+            </div>
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">aceptar</button>
+
+            
+            <button type="button" class="btn btn-primary">
+              <a href="https://adenunciar.policia.gov.co/Adenunciar/Login.aspx?ReturnUrl=%2fadenunciar%2f" class="cc-boton"> denunciar</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <!-- Modal borrar datos -->
+
+  
+
+    <button type="button" class="btn-circulo btn-primary" data-bs-toggle="modal" data-bs-target="#datosModal">
+      <img src="./img/signo.png" alt="">
+    </button>
+
+    <div class="modal fade" id="datosModal" tabindex="-1" ria-labelledby="datosModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="datosModalLabel">borra datos?</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              sus datos de borraran
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">aceptar</button>
+              <button type="button" class="btn btn-primary">
+                <a href="https://adenunciar.policia.gov.co/Adenunciar/Login.aspx?ReturnUrl=%2fadenunciar%2f" class="cc-boton"> denunciar</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+  
+
+  <!-- SCRIPTS -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="./app/ubicacion.js"></script>
+
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
