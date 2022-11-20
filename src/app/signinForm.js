@@ -2,22 +2,28 @@ import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9
 import { auth } from "./firebase.js";
 import { showMessage } from "./showMessage.js";
 
-const signInForm = document.querySelector("#login-form"); //ID FORM
+alert("alerta1")
 
-signInForm.addEventListener("submit", async (e) => {
+const loginform = document.querySelector("#login-form"); //ID FORM
+
+loginform.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const email = signInForm["login-email"].value;
-  const password = signInForm["login-password"].value;
+  const email = loginform["login-email"].value;
+  const password = loginform["login-password"].value;
+  alert("alerta2")
 
   try {
+    alert("alerta3")
     const userCredentials = await signInWithEmailAndPassword(auth, email, password)
     console.log(userCredentials)
+    
+    location = "pantallap.html";
 
     // Close the login modal
     
     //const modal = bootstrap.Modal.getInstance(signInForm.closest('.modal'));
     //modal.hide();
-
+    alert("alerta4")
   
     // reset the form
     signInForm.reset();

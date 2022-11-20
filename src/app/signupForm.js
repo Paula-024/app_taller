@@ -2,14 +2,18 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { auth } from "./firebase.js";
 import { showMessage } from "./showMessage.js";
 
+alert("entro")
+
 const signUpForm = document.querySelector("#registro-form"); //ID FORM
 
 signUpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+  alert("entro 2")
   const email = signUpForm["registro-email"].value; //CAMPOS PARA INFO
   const password = signUpForm["registro-password"].value;
 
   try {
+    alert("entro 3")
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     console.log(userCredential)
 
@@ -17,9 +21,11 @@ signUpForm.addEventListener("submit", async (e) => {
     //const signupModal = document.querySelector('#signupModal'); //BOTON
     //const modal = bootstrap.Modal.getInstance(signupModal);
     //modal.hide();
-
+    alert("entro 4")
     // reset the form
+    
     signUpForm.reset();
+
 
     // show welcome message
     //showMessage("Welcome" + userCredential.user.email);
