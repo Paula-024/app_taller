@@ -1,0 +1,232 @@
+:root{
+    --azul:#114897;
+    --azuloscuro:#022453;
+    --blanco:#FFFEE2;
+  }
+  
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit *                 /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color:var(--blanco);
+  background-image:linear-gradient(to left,#D5E9F6 , #114897);
+  font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+  font-size:12px;
+  height:100vh;
+  /*margin:0px;
+  padding:0px;
+  /* Padding to avoid the "unsafe" areas behind notches in the screen 
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  text-transform:uppercase;
+  width:100%;*/
+}
+
+.btn { /*------TODOS LOS BOTONES---*/
+    background-color: #114897;
+    border-color: #D5E9F6;
+    border-width: 2px;
+    text-decoration-color: #022453;
+    color: #D5E9F6;
+    margin: 3px;
+    
+}
+
+.btn a {
+    text-decoration: none;
+    color: #D5E9F6;
+}
+
+nav{
+    background: var(--azuloscuro);
+    height: 80px;
+    width: 100%;
+    
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+
+
+.logo-principal {
+    margin: 10px 20px;
+    height: 60px;
+    background-color: #D5E9F6;
+    border-radius: 50%;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #D5E9F6;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #D5E9F6;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #D5E9F6;  
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    .espacio-apps {  
+        
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 50%;
+        height: 140px;
+        background: #0064A8;
+        color: #D5E9F6;
+        top: 80px;
+        right: -100%;
+        text-align: right;
+        transition: all .5s;
+        box-shadow: 4px 8px 8px #0224539d;
+        
+        
+    }
+    
+    
+    nav ul li{
+        display: block;
+        padding-top: 10px;
+        line-height: 30px;
+    }
+    nav ul li a{
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    li a:hover, li a:active{/* cambiar colores */
+        color: #D5E9F6;
+        border-bottom: #D5E9F6;
+        background: none;
+    }
+    #check:checked ~ ul{
+        right:0;
+    }
+    
+    .espacio-apps {
+        max-width: 100%;
+        align-self: left;
+        flex: 100%;
+    }
+}
+  
+  
+
+.titulo {
+    
+    margin: 50px 30px;
+    
+    
+    
+}
+
+/*resto de la pagina*/
+
+.espacio-apps {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(5rem,5rem));
+    padding: 20px;
+}
+
+.icon {
+    
+    grid-column: span 1;
+    
+    height: 60px;
+    
+    margin-top: 8px;
+    vertical-align: middle;
+    position: relative;
+    justify-content: space-around;
+    text-align: center;
+}
+.apps {
+    max-height: 60px;
+        
+    padding: 10px;
+}
+    
+.btn-circulo {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: #2AB825;
+    font-size: large;
+    background-color: #0064A8;
+    box-shadow: #056402;
+    margin: 40px;
+    float: right;
+    border-color: #056402;
+}
+    
+    
+    
+  /*.--------------maps-----------*/
+  
+.modal-map{
+    position:relative;
+    text-align:center;
+    width:100%;
+    height:400px;
+}
+.map_canvas {
+    overflow:hidden;
+    background:none;
+    width:100%;
+    height:400px;
+}
+.gmap_iframe {
+    height:400px;
+}
+  
+  
+  
